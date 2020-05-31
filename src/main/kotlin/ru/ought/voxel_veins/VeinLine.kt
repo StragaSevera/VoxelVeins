@@ -1,5 +1,7 @@
 package ru.ought.voxel_veins
 
+import java.util.*
+
 data class VeinLine(
     val name: String,
     val x: Int,
@@ -32,8 +34,11 @@ data class VeinLine(
     }
 
     override fun toString(): String {
+        val redFormatted = "%f".format(Locale.ENGLISH, red)
+        val greenFormatted = "%f".format(Locale.ENGLISH, green)
+        val blueFormatted = "%f".format(Locale.ENGLISH, blue)
         return "name:$name,x:$x,z:$z,y:$y,enabled:false," +
-                "red:${red.format(8)},green:${green.format(8)},blue:${blue.format(8)}," +
+                "red:${redFormatted},green:${greenFormatted},blue:${blueFormatted}," +
                 "suffix:$suffix,world:,dimensions:$dimension"
     }
 
